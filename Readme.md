@@ -1,33 +1,3 @@
-
-see 
-
-Ahh yes reyyy, I understand what you mean. In README.md, if you simply press Enter once, Markdown often treats consecutive lines as the same paragraph, so they appear together.
-
-For example, this:
-
-Welcome to StayScape
-Airbnb inspired travel platform
-Built with React
-Learning MERN through this project
-may render like one paragraph.
-
-If you want each line separately
-Use <br>:
-
-Welcome to StayScape<br>
-Airbnb inspired travel platform<br>
-Built with React<br>
-Learning MERN through this project
-It will display as:
-
-Welcome to StayScape
-Airbnb inspired travel platform
-Built with React
-Learning MERN through this project
-
-Even better for our README
-Use headings and bullet points:
-
 # StayScape
 
 An Airbnb-inspired travel platform built while learning MERN.
