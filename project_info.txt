@@ -1,0 +1,767 @@
+📁Complete Project Structure :
+
+Airbnb/
+│
+├── frontend/                         ← React frontend
+│   │
+│   ├── public/
+│   │   └── ...
+│   │
+│   ├── src/
+│   │   │
+│   │   ├── assets/
+│   │   │   ├── images/
+│   │   │   ├── logos/
+│   │   │   └── icons/
+│   │   │
+│   │   ├── components/              ← Reusable UI
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── SearchBar.jsx
+│   │   │   ├── PropertyCard.jsx
+│   │   │   ├── ExperienceCard.jsx
+│   │   │   ├── ServiceCard.jsx
+│   │   │   ├── CategoryCard.jsx
+│   │   │   ├── FilterBar.jsx
+│   │   │   ├── Map.jsx
+│   │   │   ├── Rating.jsx
+│   │   │   ├── Loading.jsx
+│   │   │   ├── ErrorMessage.jsx
+│   │   │   └── ProtectedRoute.jsx
+│   │   │
+│   │   ├── pages/                   ← Main traveller/public pages
+│   │   │   ├── Home.jsx
+│   │   │   ├── Homes.jsx
+│   │   │   ├── PropertyDetails.jsx
+│   │   │   ├── Experiences.jsx
+│   │   │   ├── ExperienceDetails.jsx
+│   │   │   ├── Services.jsx
+│   │   │   ├── ServiceDetails.jsx
+│   │   │   ├── SearchResults.jsx
+│   │   │   │
+│   │   │   ├── auth/
+│   │   │   │   ├── Login.jsx
+│   │   │   │   ├── Signup.jsx
+│   │   │   │   └── ForgotPassword.jsx
+│   │   │   │
+│   │   │   ├── traveller/
+│   │   │   │   ├── Dashboard.jsx
+│   │   │   │   ├── Trips.jsx
+│   │   │   │   ├── TripDetails.jsx
+│   │   │   │   ├── Wishlist.jsx
+│   │   │   │   ├── Messages.jsx
+│   │   │   │   ├── Notifications.jsx
+│   │   │   │   ├── Payments.jsx
+│   │   │   │   ├── Profile.jsx
+│   │   │   │   ├── Settings.jsx
+│   │   │   │   └── Review.jsx
+│   │   │   │
+│   │   │   └── errors/
+│   │   │       ├── NotFound.jsx
+│   │   │       └── ServerError.jsx
+│   │   │
+│   │   ├── host/                    ← Host side
+│   │   │   ├── HostDashboard.jsx
+│   │   │   ├── Listings.jsx
+│   │   │   ├── CreateListing.jsx
+│   │   │   ├── EditListing.jsx
+│   │   │   ├── ListingPreview.jsx
+│   │   │   ├── Calendar.jsx
+│   │   │   ├── Reservations.jsx
+│   │   │   ├── Earnings.jsx
+│   │   │   ├── Analytics.jsx
+│   │   │   ├── HostMessages.jsx
+│   │   │   ├── HostReviews.jsx
+│   │   │   └── HostProfile.jsx
+│   │   │
+│   │   ├── admin/                   ← Admin side
+│   │   │   ├── AdminDashboard.jsx
+│   │   │   ├── Users.jsx
+│   │   │   ├── Listings.jsx
+│   │   │   ├── Bookings.jsx
+│   │   │   ├── Payments.jsx
+│   │   │   ├── Reviews.jsx
+│   │   │   ├── Reports.jsx
+│   │   │   └── Analytics.jsx
+│   │   │
+│   │   ├── context/                 ← Global state
+│   │   │   ├── AuthContext.jsx
+│   │   │   ├── BookingContext.jsx
+│   │   │   └── WishlistContext.jsx
+│   │   │
+│   │   ├── hooks/
+│   │   │   ├── useAuth.js
+│   │   │   ├── useFetch.js
+│   │   │   └── useBooking.js
+│   │   │
+│   │   ├── services/                ← Frontend API calls
+│   │   │   ├── api.js
+│   │   │   ├── auth.api.js
+│   │   │   ├── property.api.js
+│   │   │   ├── booking.api.js
+│   │   │   ├── wishlist.api.js
+│   │   │   ├── experience.api.js
+│   │   │   ├── service.api.js
+│   │   │   ├── payment.api.js
+│   │   │   └── ai.api.js
+│   │   │
+│   │   ├── routes/
+│   │   │   └── AppRoutes.jsx
+│   │   │
+│   │   ├── utils/
+│   │   │   ├── formatPrice.js
+│   │   │   ├── formatDate.js
+│   │   │   └── validators.js
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   │
+│   ├── .env
+│   ├── .gitignore
+│   ├── package.json
+│   ├── vite.config.js
+│   └── index.html
+│
+│
+├── backend/                          ← Node + Express backend
+│   │
+│   ├── src/
+│   │   │
+│   │   ├── config/
+│   │   │   ├── db.js
+│   │   │   ├── cloudinary.js
+│   │   │   └── env.js
+│   │   │
+│   │   ├── models/                  ← MongoDB schemas
+│   │   │   ├── User.js
+│   │   │   ├── Property.js
+│   │   │   ├── Booking.js
+│   │   │   ├── Review.js
+│   │   │   ├── Wishlist.js
+│   │   │   ├── Experience.js
+│   │   │   ├── ExperienceBooking.js
+│   │   │   ├── Service.js
+│   │   │   ├── ServiceBooking.js
+│   │   │   ├── Message.js
+│   │   │   ├── Conversation.js
+│   │   │   ├── Notification.js
+│   │   │   └── Payment.js
+│   │   │
+│   │   ├── routes/                  ← API URLs
+│   │   │   ├── auth.routes.js
+│   │   │   ├── property.routes.js
+│   │   │   ├── booking.routes.js
+│   │   │   ├── review.routes.js
+│   │   │   ├── wishlist.routes.js
+│   │   │   ├── experience.routes.js
+│   │   │   ├── service.routes.js
+│   │   │   ├── message.routes.js
+│   │   │   ├── notification.routes.js
+│   │   │   ├── payment.routes.js
+│   │   │   ├── host.routes.js
+│   │   │   ├── admin.routes.js
+│   │   │   └── ai.routes.js
+│   │   │
+│   │   ├── controllers/             ← Request handling
+│   │   │   ├── auth.controller.js
+│   │   │   ├── property.controller.js
+│   │   │   ├── booking.controller.js
+│   │   │   ├── review.controller.js
+│   │   │   ├── wishlist.controller.js
+│   │   │   ├── experience.controller.js
+│   │   │   ├── service.controller.js
+│   │   │   ├── message.controller.js
+│   │   │   ├── notification.controller.js
+│   │   │   ├── payment.controller.js
+│   │   │   ├── host.controller.js
+│   │   │   ├── admin.controller.js
+│   │   │   └── ai.controller.js
+│   │   │
+│   │   ├── services/                ← Business logic
+│   │   │   ├── booking.service.js
+│   │   │   ├── payment.service.js
+│   │   │   ├── email.service.js
+│   │   │   ├── cloudinary.service.js
+│   │   │   ├── ai.service.js
+│   │   │   └── recommendation.service.js
+│   │   │
+│   │   ├── middleware/
+│   │   │   ├── auth.middleware.js
+│   │   │   ├── role.middleware.js
+│   │   │   ├── error.middleware.js
+│   │   │   ├── upload.middleware.js
+│   │   │   └── rateLimit.middleware.js
+│   │   │
+│   │   ├── validators/
+│   │   │   ├── auth.validator.js
+│   │   │   ├── property.validator.js
+│   │   │   ├── booking.validator.js
+│   │   │   └── review.validator.js
+│   │   │
+│   │   ├── utils/
+│   │   │   ├── ApiError.js
+│   │   │   ├── ApiResponse.js
+│   │   │   ├── asyncHandler.js
+│   │   │   ├── generateToken.js
+│   │   │   └── calculatePrice.js
+│   │   │
+│   │   ├── sockets/
+│   │   │   └── socket.js
+│   │   │
+│   │   ├── app.js
+│   │   └── server.js
+│   │
+│   ├── .env
+│   ├── .gitignore
+│   └── package.json
+│
+│
+├── README.md
+├── .gitignore
+└── package.json                ← optional root package
+
+🔥 NOW THE BUILD ORDER
+
+01  Project setup
+        ↓
+02  GitHub
+        ↓
+03  React + Vite
+        ↓
+04  Tailwind
+        ↓
+05  Navbar
+        ↓
+06  Home page
+        ↓
+07  Search bar
+        ↓
+08  Categories
+        ↓
+09  Property cards
+        ↓
+10  Homes page
+        ↓
+11  Property details
+        ↓
+12  Experiences
+        ↓
+13  Services
+        ↓
+14  React Router
+        ↓
+15  Responsive design
+        ↓
+16  Node.js + Express
+        ↓
+17  MongoDB + Mongoose
+        ↓
+18  User model
+        ↓
+19  Signup/Login
+        ↓
+20  Authentication
+        ↓
+21  Connect React ↔ Backend
+        ↓
+22  Properties from MongoDB
+        ↓
+23  Search + Filters
+        ↓
+24  Wishlist
+        ↓
+25  Booking
+        ↓
+26  Trips
+        ↓
+27  Reviews
+        ↓
+28  Notifications
+        ↓
+29  Messages
+        ↓
+30  Payments
+        ↓
+31  Switch to Host
+        ↓
+32  Host Dashboard
+        ↓
+33  Create Listing
+        ↓
+34  Manage Listings
+        ↓
+35  Calendar
+        ↓
+36  Reservations
+        ↓
+37  Earnings
+        ↓
+38  Analytics
+        ↓
+39  Experiences Backend
+        ↓
+40  Services Backend
+        ↓
+41  Admin
+        ↓
+42  Cloudinary
+        ↓
+43  Maps
+        ↓
+44  Socket.IO
+        ↓
+45  AI Travel Assistant
+        ↓
+46  AI Search
+        ↓
+47  AI Recommendations
+        ↓
+48  AI Review Summary
+        ↓
+49  Security
+        ↓
+50  Testing
+        ↓
+51  Deployment
+        ↓
+52  Final README + Documentation
+        ↓
+        🏆 COMPLETE PROJECT
+
+
+
+🏠 AIRBNB-INSPIRED PLATFORM — COMPLETE MASTER MAP
+
+AIRBNB-INSPIRED PLATFORM
+│
+├── 🌐 PUBLIC WEBSITE — BEFORE LOGIN
+│   │
+│   ├── /                         → Home
+│   │   ├── Navbar
+│   │   │   ├── Logo
+│   │   │   ├── Explore
+│   │   │   ├── Homes
+│   │   │   ├── Experiences
+│   │   │   ├── Services
+│   │   │   ├── Become a Host
+│   │   │   ├── Login
+│   │   │   └── Sign Up
+│   │   │
+│   │   ├── Hero / Search
+│   │   │   ├── Where
+│   │   │   ├── When
+│   │   │   ├── Who
+│   │   │   └── Search
+│   │   │
+│   │   ├── Categories
+│   │   │   ├── Beach
+│   │   │   ├── Mountains
+│   │   │   ├── Luxury
+│   │   │   ├── Trending
+│   │   │   ├── Countryside
+│   │   │   ├── City
+│   │   │   ├── Pools
+│   │   │   └── Unique Stays
+│   │   │
+│   │   ├── Featured Homes
+│   │   ├── Experiences
+│   │   ├── Services
+│   │   ├── Popular Destinations
+│   │   └── Footer
+│   │
+│   │
+│   ├── /homes                    → Homes Marketplace
+│   │   ├── Search
+│   │   ├── Filters
+│   │   ├── Sort
+│   │   ├── Map
+│   │   └── Property Cards
+│   │
+│   │
+│   ├── /homes/:id                → Property Details
+│   │   ├── Image Gallery
+│   │   ├── Title
+│   │   ├── Location
+│   │   ├── Rating
+│   │   ├── Reviews
+│   │   ├── Host
+│   │   ├── Description
+│   │   ├── Bedrooms
+│   │   ├── Beds
+│   │   ├── Bathrooms
+│   │   ├── Amenities
+│   │   ├── House Rules
+│   │   ├── Map
+│   │   ├── Availability
+│   │   ├── Price
+│   │   ├── Wishlist
+│   │   └── Reserve
+│   │
+│   │
+│   ├── /experiences               → Experiences
+│   │   ├── Food
+│   │   ├── Culture
+│   │   ├── Adventure
+│   │   ├── Art
+│   │   ├── Photography
+│   │   ├── Sports
+│   │   ├── Tours
+│   │   └── Workshops
+│   │
+│   │
+│   ├── /experiences/:id           → Experience Details
+│   │   ├── Photos
+│   │   ├── Host
+│   │   ├── Description
+│   │   ├── Schedule
+│   │   ├── Location
+│   │   ├── Duration
+│   │   ├── Included
+│   │   ├── Requirements
+│   │   ├── Reviews
+│   │   ├── Price
+│   │   └── Book
+│   │
+│   │
+│   ├── /services                  → Services
+│   │   ├── Private Chef
+│   │   ├── Massage
+│   │   ├── Photography
+│   │   ├── Beauty
+│   │   ├── Fitness
+│   │   └── Catering
+│   │
+│   │
+│   └── /services/:id              → Service Details
+│       ├── Provider
+│       ├── Qualifications
+│       ├── Photos
+│       ├── Description
+│       ├── Included
+│       ├── Price
+│       ├── Date
+│       ├── Time
+│       ├── Location
+│       ├── Reviews
+│       └── Book
+│
+│
+├── 🔐 AUTHENTICATION
+│   │
+│   ├── /login
+│   │   ├── Email
+│   │   ├── Password
+│   │   └── Login
+│   │
+│   ├── /signup
+│   │   ├── Name
+│   │   ├── Email
+│   │   ├── Password
+│   │   └── Create Account
+│   │
+│   ├── Logout
+│   ├── Protected Routes
+│   ├── Authentication
+│   ├── Authorization
+│   └── Password Hashing
+│
+│
+├── 👤 AFTER LOGIN — TRAVELLER MODE
+│   │
+│   ├── /home                     → Personalized Home
+│   │   ├── Greeting
+│   │   ├── Search
+│   │   ├── Continue Planning
+│   │   ├── Recommended
+│   │   ├── Popular
+│   │   └── Nearby
+│   │
+│   ├── /wishlist                 → Saved Items
+│   │   ├── Homes
+│   │   ├── Experiences
+│   │   ├── Services
+│   │   └── Collections
+│   │
+│   ├── /trips                    → Trips
+│   │   ├── Upcoming
+│   │   ├── Currently Travelling
+│   │   ├── Completed
+│   │   └── Cancelled
+│   │
+│   ├── /trips/:id                → Trip Details
+│   │   ├── Stay
+│   │   ├── Experiences
+│   │   ├── Services
+│   │   ├── Dates
+│   │   ├── Map
+│   │   └── Itinerary
+│   │
+│   ├── /messages                 → Messages
+│   ├── /notifications            → Notifications
+│   ├── /payments                 → Payments
+│   ├── /profile                  → Profile
+│   ├── /settings                 → Settings
+│   └── /review/:id               → Review
+│
+│
+├── 💳 BOOKING SYSTEM
+│   │
+│   ├── Check Availability
+│   ├── Select Dates
+│   ├── Select Guests
+│   ├── Calculate Nights
+│   ├── Calculate Price
+│   ├── Service Fee
+│   ├── Total
+│   ├── Payment
+│   ├── Confirmation
+│   ├── Cancellation
+│   └── Refund
+│
+│
+├── 🏠 HOST MODE
+│   │
+│   ├── Same User Account
+│   │
+│   ├── Traveller Mode
+│   │        ↕
+│   │   Switch to Hosting
+│   │        ↕
+│   │   Host Mode
+│   │
+│   ├── /host                     → Host Dashboard
+│   │   ├── Total Earnings
+│   │   ├── Monthly Earnings
+│   │   ├── Reservations
+│   │   ├── Rating
+│   │   ├── Upcoming Reservations
+│   │   ├── Messages
+│   │   └── Performance
+│   │
+│   ├── /host/listings             → Manage Listings
+│   │   ├── Active
+│   │   ├── Draft
+│   │   ├── Paused
+│   │   ├── Edit
+│   │   ├── Preview
+│   │   └── Delete
+│   │
+│   ├── /host/listings/new         → Create Listing
+│   │   ├── Property Type
+│   │   ├── Location
+│   │   ├── Photos
+│   │   ├── Description
+│   │   ├── Amenities
+│   │   ├── Bedrooms
+│   │   ├── Beds
+│   │   ├── Bathrooms
+│   │   ├── Pricing
+│   │   ├── Availability
+│   │   ├── House Rules
+│   │   ├── Preview
+│   │   └── Publish
+│   │
+│   ├── /host/calendar             → Calendar
+│   │   ├── Booked Dates
+│   │   ├── Block Dates
+│   │   ├── Open Dates
+│   │   └── Change Price
+│   │
+│   ├── /host/reservations         → Reservations
+│   ├── /host/earnings             → Earnings
+│   ├── /host/analytics            → Analytics
+│   ├── /host/messages             → Messages
+│   ├── /host/reviews              → Reviews
+│   ├── /host/profile              → Host Profile
+│   └── Switch to Travelling
+│
+│
+├── 🛡️ ADMIN
+│   │
+│   └── /admin
+│       ├── Dashboard
+│       ├── Users
+│       ├── Hosts
+│       ├── Properties
+│       ├── Experiences
+│       ├── Services
+│       ├── Bookings
+│       ├── Payments
+│       ├── Reviews
+│       ├── Reports
+│       └── Analytics
+│
+│       ├── Approve Listings
+│       ├── Reject Listings
+│       ├── Suspend Users
+│       ├── Remove Listings
+│       └── Moderate Reviews
+│
+│
+├── 🤖 AI
+│   │
+│   ├── AI Travel Assistant
+│   │   ├── User Request
+│   │   ├── Stay Suggestions
+│   │   ├── Experience Suggestions
+│   │   ├── Service Suggestions
+│   │   └── Itinerary
+│   │
+│   ├── AI Smart Search
+│   ├── AI Recommendations
+│   └── AI Review Summaries
+│
+│
+├── 🌍 EXTERNAL APIs / SERVICES
+│   │
+│   ├── Maps API
+│   │   ├── Map
+│   │   ├── Location
+│   │   └── Directions
+│   │
+│   ├── Cloudinary
+│   │   ├── Property Images
+│   │   └── Profile Images
+│   │
+│   ├── Payment Gateway
+│   ├── Email Service
+│   └── Socket.IO
+│       ├── Real-time Chat
+│       ├── Notifications
+│       └── Online Status
+│
+│
+├── 🖥️ FRONTEND — REACT
+│   │
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── SearchBar.jsx
+│   │   ├── PropertyCard.jsx
+│   │   ├── CategoryCard.jsx
+│   │   ├── ExperienceCard.jsx
+│   │   ├── ServiceCard.jsx
+│   │   ├── Footer.jsx
+│   │   └── ...
+│   │
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Homes.jsx
+│   │   ├── PropertyDetails.jsx
+│   │   ├── Experiences.jsx
+│   │   ├── ExperienceDetails.jsx
+│   │   ├── Services.jsx
+│   │   ├── ServiceDetails.jsx
+│   │   ├── Login.jsx
+│   │   ├── Signup.jsx
+│   │   ├── Trips.jsx
+│   │   ├── Wishlist.jsx
+│   │   ├── Profile.jsx
+│   │   └── ...
+│   │
+│   ├── host/
+│   │   ├── HostDashboard.jsx
+│   │   ├── Listings.jsx
+│   │   ├── CreateListing.jsx
+│   │   ├── Calendar.jsx
+│   │   ├── Reservations.jsx
+│   │   ├── Earnings.jsx
+│   │   ├── Analytics.jsx
+│   │   └── ...
+│   │
+│   ├── admin/
+│   │   ├── AdminDashboard.jsx
+│   │   ├── Users.jsx
+│   │   ├── Listings.jsx
+│   │   └── ...
+│   │
+│   ├── context/
+│   │   ├── AuthContext.jsx
+│   │   └── ...
+│   │
+│   ├── hooks/
+│   ├── services/
+│   │   └── api.js
+│   ├── utils/
+│   ├── routes/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+│
+│
+├── ⚙️ BACKEND — NODE + EXPRESS
+│   │
+│   ├── config/
+│   │   ├── db.js
+│   │   └── cloudinary.js
+│   │
+│   ├── controllers/
+│   │   ├── auth.controller.js
+│   │   ├── property.controller.js
+│   │   ├── booking.controller.js
+│   │   ├── review.controller.js
+│   │   ├── wishlist.controller.js
+│   │   ├── experience.controller.js
+│   │   └── service.controller.js
+│   │
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Property.js
+│   │   ├── Booking.js
+│   │   ├── Review.js
+│   │   ├── Wishlist.js
+│   │   ├── Experience.js
+│   │   ├── Service.js
+│   │   └── Message.js
+│   │
+│   ├── routes/
+│   │   ├── auth.routes.js
+│   │   ├── property.routes.js
+│   │   ├── booking.routes.js
+│   │   ├── review.routes.js
+│   │   ├── wishlist.routes.js
+│   │   ├── experience.routes.js
+│   │   └── service.routes.js
+│   │
+│   ├── middleware/
+│   │   ├── auth.middleware.js
+│   │   ├── error.middleware.js
+│   │   └── upload.middleware.js
+│   │
+│   ├── services/
+│   │   ├── booking.service.js
+│   │   ├── payment.service.js
+│   │   ├── email.service.js
+│   │   └── ai.service.js
+│   │
+│   ├── utils/
+│   ├── app.js
+│   └── server.js
+│
+│
+├── 🗄️ MONGODB
+│   │
+│   ├── users
+│   ├── properties
+│   ├── bookings
+│   ├── reviews
+│   ├── wishlists
+│   ├── experiences
+│   ├── experienceBookings
+│   ├── services
+│   ├── serviceBookings
+│   ├── messages
+│   ├── notifications
+│   ├── payments
+│   └── conversations
+│
+│
+└── 🚀 DEPLOYMENT
+    │
+    ├── Frontend → Vercel
+    ├── Backend → Hosting Platform
+    ├── Database → MongoDB Atlas
+    ├── Images → Cloudinary
+    ├── Environment Variables
+    ├── Domain
+    └── Final Testing
