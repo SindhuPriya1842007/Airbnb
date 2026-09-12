@@ -123,18 +123,30 @@
 
 
 
-import Navbar from "./components/Navbar"
+// import Navbar from "./components/Navbar"
+// import Footer from "./components/Footer"
+// import Home from "./pages/Home"
+// import SearchBar from "../components/SearchBar"
+
+// function App() {
+//   return (
+//     <div>
+//       <Navbar />
+//       <SearchBar />
+//       <Home />
+//       <Footer />
+//     </div>
+//   )
+// }
+
+// export default 
+
+
+
+import AppRoutes from "./routes/AppRoutes"
 
 function App() {
-  return (
-    <div>
-      <Navbar />
-
-      <h1 className="text-4xl font-bold text-center mt-10">
-        Welcome to StayScape
-      </h1>
-    </div>
-  )
+  return <AppRoutes />
 }
 
 export default App
